@@ -54,7 +54,7 @@ h3 {
 .smurf-list {
   background: rgb(78, 80, 82);
   color: white;
-  height: 400px;
+  height: 100%;
 }
 
 .smurf-wrapper {
