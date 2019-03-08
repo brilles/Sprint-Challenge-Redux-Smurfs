@@ -1,13 +1,6 @@
 .App {
   text-align: center;
   background: #64a7d1;
-  box-sizing: border-box;
-}
-
-.main-container {
-  display: flex;
-  justify-content: space-evenly;
-  box-sizing: border-box;
 }
 .title {
   background: #006cb0;
@@ -18,14 +11,10 @@
   margin-bottom: 20px;
 }
 
-.left {
-  width: 60%;
-}
-
 form {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
@@ -51,18 +40,36 @@ button {
   margin-top: 10px;
   border: none;
   padding: 10px;
+
   background-color: #0f7fc5;
   border-radius: 20px;
   cursor: pointer;
 }
 
+h3 {
+  padding-top: 20px;
+  font-size: 1.5rem;
+}
+
 .smurf-list {
-  box-sizing: border-box;
-  background: #2a76a5;
-  padding: 20px;
-  border-radius: 20px;
-  width: 40%;
+  background: rgb(78, 80, 82);
+  color: white;
+  height: 400px;
+}
+
+.smurf-wrapper {
+  color: black;
+  background-color: rgb(122, 176, 201);
+  margin: 5px;
+  width: 75%;
   display: flex;
+  margin: 5px auto;
   flex-direction: column;
-  margin: 0 auto;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.397);
+}
+
+p,
+h4 {
+  margin: 8px;
 }

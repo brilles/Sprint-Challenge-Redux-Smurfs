@@ -45,14 +45,8 @@ class App extends Component {
           <h1>Smurfs</h1>
         </div>
         <div className="main-container">
-          <div className="left">
-            <SmurfList smurfs={this.props.smurfs} />
-          </div>
-
           <div className="add-smurf-form">
-            <div className="form-title">
-              <h2>Add Smurf</h2>
-            </div>
+            <h2>Add Smurf:</h2>
             <form onSubmit={this.postSmurf}>
               <input
                 type="text"
@@ -81,6 +75,8 @@ class App extends Component {
               <button>Add Smurf</button>
             </form>
           </div>
+
+          <SmurfList smurfs={this.props.smurfs} />
         </div>
       </div>
     );
