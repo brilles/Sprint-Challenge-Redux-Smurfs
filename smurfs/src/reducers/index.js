@@ -2,9 +2,12 @@
   Be sure to import in all of the action types from `../actions`
 */
 import {
+  FETCH_SMURFS_FAILURE,
   FETCH_SMURFS_START,
   FETCH_SMURFS_SUCCESS,
-  FETCH_SMURFS_FAILURE
+  POST_SMURF_FAILURE,
+  POST_SMURF_START,
+  POST_SMURF_SUCCESS
 } from "../actions";
 
 /*
@@ -45,11 +48,34 @@ const rootReducer = (state = initialState, action) => {
         fetchingSmurfs: true
       };
     case FETCH_SMURFS_SUCCESS:
-      console.log(action);
       return {
         ...state,
         fetchingSmurfs: false,
         smurfs: [...state.smurfs, ...action.payload]
+      };
+
+    case FETCH_SMURFS_FAILURE:
+      return {
+        ...state,
+        fetchingSmurfs: false,
+        error: action.payload
+      };
+    case POST_SMURF_START:
+      return {
+        ...state,
+        addingSmurf: true
+      };
+    case POST_SMURF_SUCCESS:
+      return {
+        ...state,
+        fetchingSmurfs: false,
+        error: action.payload
+      };
+    case POST_SMURF_FAILURE:
+      return {
+        ...state,
+        addingSmurf: false,
+        error: action.payload
       };
     default:
       return state;
