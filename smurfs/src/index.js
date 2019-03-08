@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./components/App";
-import thunk from "redux-thunk";
-import logger from "redux-logger";
-import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
+import { applyMiddleware, createStore } from "redux";
+import logger from "redux-logger";
+import thunk from "redux-thunk";
+import App from "./components/App";
+import "./index.css";
 import rootReducer from "./reducers";
 
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));
