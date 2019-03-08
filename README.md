@@ -23,8 +23,16 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+Actions are objects with at most, two properties; type, and payload. The type property tells what event just happened. The payload is data that comes with that event. Actions are then dispatched to the reducer. Reducers make a new state based of the current state and the action. This is the core of redux really: (current state + action = new state). Reducers must be pure functions and must follow immutability. The store is an object. It is called “a single source of truth” because it holds the state of the application and is immutable.
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+The application state pertains to the global state of the app so it is good to use when many different components need to access that state. The component state pertains to the local state of the component and can be used to store data that only pertains to that component.
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+Redux-thunk is middleware that allows an app to handle asynchronous functions in action creators. It acts as a gatekeeper as it will look at what is returned from the action-creator, forwarding it if it is an action (to the reducer) and if its a function, invoking it(with the dispatch function passed in it). It is commonly used for making api calls. It is powerful because the thunk can dispatch a new action based on the result of an api call. In a way this is what allows the code to have a conversation with the outside world.
 
 ## Project Set Up
 
@@ -80,9 +88,9 @@ return dispatch => {
 ```js
 [
   {
-    name: 'Brainey',
+    name: "Brainey",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 0
   }
 ];
@@ -113,15 +121,15 @@ Example of object created in Smurf DB:
 ```js
 [
   {
-    name: 'Brainey',
+    name: "Brainey",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 0
   },
   {
-    name: 'Sleepy',
+    name: "Sleepy",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 1
   }
 ];
@@ -173,9 +181,9 @@ Example:
 ```js
 output: [
   {
-    name: 'Sleepy',
+    name: "Sleepy",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 1
   }
 ];
