@@ -36,40 +36,51 @@ class App extends Component {
 
   render() {
     if (this.props.fetchingSmurfs) {
-      return <h1>Loading ....... !</h1>;
+      return <h2>Loading ....... !</h2>;
     }
 
     return (
       <div className="App">
-        <SmurfList smurfs={this.props.smurfs} />
-        <div className="add-smurf-form">
-          <form onSubmit={this.postSmurf}>
-            <input
-              type="text"
-              onChange={this.handleChanges}
-              placeholder="name"
-              value={this.state.name}
-              name="name"
-              required
-            />
-            <input
-              type="number"
-              onChange={this.handleChanges}
-              placeholder="age"
-              value={this.state.age}
-              name="age"
-              required
-            />
-            <input
-              type="text"
-              onChange={this.handleChanges}
-              placeholder="height"
-              value={this.state.height}
-              name="height"
-              required
-            />
-            <button>Add Smurf</button>
-          </form>
+        <div className="title">
+          <h1>Smurfs</h1>
+        </div>
+        <div className="main-container">
+          <div className="left">
+            <SmurfList smurfs={this.props.smurfs} />
+          </div>
+
+          <div className="add-smurf-form">
+            <div className="form-title">
+              <h2>Add Smurf</h2>
+            </div>
+            <form onSubmit={this.postSmurf}>
+              <input
+                type="text"
+                onChange={this.handleChanges}
+                placeholder="name"
+                value={this.state.name}
+                name="name"
+                required
+              />
+              <input
+                type="number"
+                onChange={this.handleChanges}
+                placeholder="age"
+                value={this.state.age}
+                name="age"
+                required
+              />
+              <input
+                type="text"
+                onChange={this.handleChanges}
+                placeholder="height"
+                value={this.state.height}
+                name="height"
+                required
+              />
+              <button>Add Smurf</button>
+            </form>
+          </div>
         </div>
       </div>
     );
